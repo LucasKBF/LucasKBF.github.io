@@ -11,3 +11,7 @@ hamMenu.addEventListener("click", () => {
 function teste(){
 document.write("A")
 }
+
+function eu(){
+  alert("eu")
+}
