@@ -1,0 +1,69 @@
+<script>
+function PularLinha(){
+		document.write("<br>");
+}
+function Escrever(escrevendo){
+		document.write(escrevendo);PularLinha();PularLinha();
+}
+function EscreverSemPular(escrevendo2){
+	document.write(escrevendo2)
+}
+
+document.write("<font color=\"blue\"><h1><b>IMC</b></h1></font>")
+</script>
+<html>
+<title>Calculo de IMC</title>
+<b>Informe seu peso</b><img src="https://www.shutterstock.com/image-vector/check-mark-icon-symbols-vector-600w-1184231830.jpg"
+width="10"
+height="10">
+<br>
+
+<input id="textinput" name="textinput" value="" type="text">
+<br><br>
+<b>Informe sua altura</b>
+<br>
+
+<input id="textinput2" name="textinput2" value="" type="text">
+<br><br>
+<button onclick="enviar()">Enviar dados</button>
+
+   <script>
+function enviar(){
+    altura = document.getElementById("textinput2").value;
+    peso = document.getElementById("textinput").value;
+    calculo()
+}
+function calculo(){
+	//var peso = prompt ("oie")
+	//var altura = 1.80
+	var IMC = peso/(altura*altura)
+	EscreverSemPular("<font color=\"blue\"><h1><b>IMC</b></h1></font>")
+	EscreverSemPular("<b>Arredondado:</b> "+Math.round(IMC)+"<br>")
+	Escrever("<b>Exato:</b> "+IMC+"<br>")
+	document.getElementById('peso')
+	EscreverSemPular("<b>Você está na categoria:</b><br> ")
+
+	if (IMC <= 18.5) {
+		Escrever("<b><font color=\"lime\">Magro</font></b> |Normal|Sobre Peso|Gordaum|Super Gordaum")
+	}
+
+	else if (IMC < 25){
+		Escrever("Magro|<b><font color=\"green\">Normal</font></b>|Sobre Peso|Gordaum|Super Gordaum")	
+	}	
+
+	else if (IMC < 30){
+		Escrever("Magro|Normal|<b><font color=\"orange\">Sobre Peso</font></b>|Gordaum|Super Gordaum")
+	}
+
+	else if (IMC < 40){
+		Escrever("Magro|Normal|Sobre Peso|<b><font color=\"red\">Gordaum</font></b>|Super Gordaum")
+	}
+
+	else if (IMC < 9999999999999){
+		Escrever("Magro|Normal|Sobre Peso|Gordaum|<b><font color=\"purple\">Super Gordaum</font></b>")
+	}
+	else {
+		Escrever("Valor inválido")
+	}
+}
+</script>

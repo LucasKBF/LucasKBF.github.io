@@ -1,0 +1,32 @@
+<canvas width="6000" height="4000"></canvas>
+<script>
+
+	var tela = document.querySelector("canvas")
+	var pincel = tela.getContext("2d")
+	pincel.fillStyle = "gray"
+	pincel.fillRect(0, 0, 6000, 4000)
+	
+
+	function paint(parametro){
+		var x = parametro.pageX - tela.offsetLeft
+		var y = parametro.pageY - tela.offsetTop
+		pincel.fillStyle = "blue"
+		pincel.beginPath()
+		pincel.arc(x, y, 50, 0, 2 * 3.14)
+		pincel.fill()
+	}
+	tela.onmousedown = inicia
+	tela.onmouseup = para
+
+	function inicia(){
+		tela.onmousemove = paint
+	}
+
+	function para(){
+		tela.onmousemove = null
+	}
+
+
+
+
+</script>

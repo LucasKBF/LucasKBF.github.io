@@ -1,0 +1,154 @@
+<script>
+acertou()
+function acertou(){
+	document.write ("<html>")
+	document.write ("<body>")
+	document.write ("<style>")
+	document.write ("div.a {")
+	document.write ("	text-align: center;")
+	document.write ("}")
+	document.write ("div.a {")
+	document.write ("	text-align: center;")
+	document.write ("}")
+	document.write ("</style>")
+
+	document.write ("<div class=\"a\">")
+
+	document.write ("<h1><font color=\"orange\"><h1><b><u>Tabuada</u></b></h1></font></h1>")
+	document.write ("<br>")
+	document.write ("<b>Selecione operação:</b><br><br>")
+
+	document.write ("<select id=\"operação\" name=\"operação\">")
+	document.write ("    <option value=\"soma\">Soma</option>")
+	document.write ("    <option value=\"divisão2\">Divisão(Número escolhido / Tabuada)</option>")
+	document.write ("    <option value=\"divisão1\">Divisão(Tabuada / Número escolhido)</option>")
+	document.write ("    <option value=\"multiplicação\">Multiplicação</option>")
+	document.write ("    <option value=\"subtração\">Subtração</option>")
+	document.write ("    <option value=\"Escolha Aqui\"selected>Escolha Aqui</option>")
+	document.write ("</select>")
+
+	document.write ("<br><br><br>	")
+	document.write ("<b>Tabuada de qual número?</b><br>")
+
+	document.write (" <input id=\"textinput\" type=\"Number\">")
+
+	document.write ("<br><br><br>")
+
+	document.write ("<b>Até que número a tabuada quer operar? (Default: 10)</b><br>")
+	document.write (" <input type=\"Number\" id=\"textinput2\">")
+
+	document.write ("<br><br><br>")
+
+	document.write ("<button onclick=\"enviar()\">Gerar</button>")
+
+	document.write ("<br><br><br>")
+
+
+	document.write ("</div>")
+	document.write ("</html>")
+	document.write ("</body>")
+}
+
+function PularLinha(){
+	document.write("<br>");
+}
+
+function Escrever(escrevendo){
+	document.write(escrevendo);PularLinha();PularLinha();
+}
+function EscreverSemPular(escrevendo2){
+	document.write(escrevendo2)
+}
+function isNumber(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+var mult = 0
+var mult2 = 10
+var max = 10
+
+
+
+ function enviar(){
+ 	mlt = parseFloat(document.getElementById("textinput").value)
+	max = document.getElementById("textinput2").value
+        
+const select =document.querySelector("#operação")
+var valor = select.value
+
+if (valor == "soma")
+	calculoSOMA ()
+else if (valor == "multiplicação")
+	calculoMULT()
+else if (valor == "divisão1"){
+	calculoDIV1()
+}
+else if (valor == "subtração"){
+	calculoSUBTRACAO()
+}
+else if (valor == "divisão2"){
+	calculoDIV2()
+
+}
+
+
+function calculoMULT(){
+	if (max==0){
+		max = 10
+	        }
+	document.write("<font color=\"orange\"><h1><b><u>Tabuada</u></b></h1></font>")
+	while(mult <= max){
+		Escrever("<b>Tabuada------>   </b>"+"<b>(</b>"+mult+"<b> * </b>"+mlt +"<b> = </b>"+mult*mlt+"<b>)</b>")
+		mult ++
+	}
+}
+
+function calculoSOMA(){
+	if (max==0)
+		max = 10
+    
+
+	document.write("<font color=\"orange\"><h1><b>Tabuada</b></h1></font>")
+	while(mult <= max){
+		Escrever("<b>Tabuada------>   </b>"+"<b>(</b>"+mult+"<b> + </b>"+mlt +"<b> = </b>"+ (mult+mlt) +"<b>)</b>")
+		mult++
+	}
+}
+function calculoDIV1(){
+if (max==0){
+max = 10
+        }
+
+document.write("<font color=\"orange\"><h1><b>Tabuada</b></h1></font>")
+while(mult <= max){
+	Escrever("<b>Tabuada------>   </b>"+"<b>(</b>"+mult+"<b> / </b>"+mlt +"<b> = </b>"+ (mult/mlt) +"<b>)</b>")
+mult++
+}
+}
+
+
+function calculoDIV2(){
+if (max==0){
+max = 10
+        }
+
+document.write("<font color=\"orange\"><h1><b>Tabuada</b></h1></font>")
+while(mult <= max){
+	Escrever("<b>Tabuada------>   </b>"+"<b>(</b>"+mlt+"<b> / </b>"+ mult +"<b> = </b>"+ (mlt/mult) +"<b>)</b>")
+mult++
+}
+}
+
+
+function calculoSUBTRACAO(){
+if (max==0){
+max = 10
+        }
+
+document.write("<font color=\"orange\"><h1><b>Tabuada</b></h1></font>")
+while(mult <= max){
+	Escrever("<b>Tabuada------>   </b>"+"<b>(</b>"+mult+"<b> - </b>"+mlt +"<b> = </b>"+ (mult-mlt) +"<b>)</b>")
+mult++
+}
+}
+}
+</script>

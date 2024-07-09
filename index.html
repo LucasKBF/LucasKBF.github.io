@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Data Base</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+<script src="JS/script.js"></script>
+<h1 class="center">Login Data Base</h1>
+
+<h3 class="center2">Por LucasKBF</h3>   
+<!DOCTYPE html>
+
+<script>
+    document.write ("<div class=\"center2\">") 
+    var x=1
+    var usuario
+    var nivel
+    var senha
+    document.write ("<input id=\"textinput\">")
+    document.write ("<br><br>")
+    document.write ("<input type='password' id=\"textinput2\">")
+    document.write("<br><br>")
+    document.write("<button onclick=\"enviar()\">Mandar</button>")
+    document.write("</div>")
+function enviar (){
+    
+    usuario=(document.getElementById("textinput").value)
+
+    if (usuario == "Lucas"){
+    senha = "Lucas2"
+    nivel = "3"
+        }
+    else if (usuario == "Admin"){
+    senha = "Admin2"
+    nivel = "2"
+        }
+    else if (usuario == "Visitante"){
+    senha = "Visitante2"
+    nivel = "1"
+    }   
+    
+    
+    if (senha == document.getElementById("textinput2").value){
+        acertou()
+	
+    }
+    else
+    alert("Usuario ou senha incorretos")
+}
+
+   
+
+function acertou (){
+    if (nivel == 1){
+    window.location.href = "index.html"
+    }
+    else if (nivel == 2){
+    window.location.href = "./armazem/index.html"
+    }
+    else if (nivel == 3){
+    window.location.href = "./projetos/index.html"
+    }
+}
+    </script>    

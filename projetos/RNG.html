@@ -1,0 +1,73 @@
+<script>
+
+function PularLinha(){
+		document.write("<br>");
+	}
+function Escrever(escrevendo){
+		document.write(escrevendo);PularLinha();PularLinha();
+	}
+function EscreverSemPular(escrevendo2){
+	document.write(escrevendo2)
+}
+
+document.write("<font color=\"blue\"><h1><b>RNG</b></h1></font>")
+
+
+</script>
+
+<html>
+<br>
+<b>Escolher números de 0 até qual número? (Default: 10)</b>
+<br>
+ <input id="textinput2" name="textinput2" value="" type="text">
+   
+<br><br>
+<b>Digite o número que você quer chutar</b>
+<br>
+
+   <input id="textinput" name="textinput" value="" type="text">
+
+<br><br><br>
+
+   <button onclick="enviar()">Confirmar</button>
+
+
+   <script>
+
+function isNumber(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+   	 var Ndigitado = 0
+   	 var multiplier 
+    function enviar(){
+    	multiplier = document.getElementById("textinput2").value;
+        Ndigitado = document.getElementById("textinput").value;
+        
+        if (!isNumber(multiplier)){
+        	Escrever ("Oie")
+        	multiplier = 10
+        }
+        var Ncerto = Math.round(Math.random()*multiplier)
+
+        if (Ndigitado == Ncerto){
+        	Escrever ("Acertou misarivi")
+        }
+
+        else if (isNaN(Ndigitado))
+        	Escrever ("Apenas números aqui!")
+
+        else if ((Ndigitado<0) || (Ndigitado > multiplier))
+        	Escrever ("Escolha apenas números entre 0 e "+multiplier)
+
+        else {
+        	Escrever ("Errrrouuuu!")
+        	Escrever ("O certo era: "+Ncerto)
+        }
+
+
+    }
+
+
+   </script>
+</html>
